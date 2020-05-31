@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'myauth',
 ]
 
 MIDDLEWARE = [
@@ -121,11 +120,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-LOGIN_URL = '/auth/login'
-
-LOGIN_REDIRECT_URL = '/'
-
-LOGIN_REDIRECT_URL = None
-
-# AUTH_USER_MODEL = 'auth.User'
