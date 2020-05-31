@@ -8,14 +8,17 @@
     {% endif %}
 
     {% if post.published_date %}
-    <div class="date">
-        {{ post.published_date }}
-    </div>
+        <div class="date">
+            {{ post.published_date }}
+        </div>
+    {% else %}
+        <a href="{% url 'post_publish' pk=post.pk %}">Publish</a>
     {% endif %}
 
     <h1>{{ post.title }}</h1>
     <p>{{ post.text|linebreaksbr }}</p>
 
+    <a href="{% url 'post_remove' pk=post.pk %}">Delete</a>
 </div>
 
 {% endblock content %}

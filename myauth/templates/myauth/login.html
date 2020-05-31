@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% if from.errors %}
+        <p>이름과 비밀번호가 일치하지 않습니다. 다시 시도해주세요</p>
+    {% endif %}
+
+    <form action="{% url 'auth_login' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="login">
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
+{% endblock content %}
